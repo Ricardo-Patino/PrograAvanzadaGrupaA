@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace ProyectoPrograAvanzada.Models
@@ -60,6 +61,23 @@ namespace ProyectoPrograAvanzada.Models
 
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
+
+        [Required]
+        [Display(Name = "Nombre Completo")]
+        public string FullName { get; set; }
+
+        [Display(Name = "Ultima Conexion")]
+        public DateTime? LastConnection { get; set; }
+
+        [Phone]
+        [Display(Name = "Direccion")]
+        public string Address { get; set; }
+
+        [Required]
+        [Display(Name = "Estado")]
+        public bool Status { get; set; }
+
+
     }
 
     public class RegisterViewModel
@@ -79,6 +97,22 @@ namespace ProyectoPrograAvanzada.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [Display(Name = "Nombre Completo")]
+        public string FullName { get; set; }
+
+        [Display(Name = "Ultima Conexion")]
+        public DateTime? LastConnection { get; set; }
+
+        [Phone]
+        [Display(Name = "Direccion")]
+        public string Address { get; set; }
+
+        [Required]
+        [Display(Name = "Estado")]
+        public bool Status { get; set; }
+
     }
 
     public class ResetPasswordViewModel
